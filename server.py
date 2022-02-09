@@ -23,6 +23,7 @@ def new():
 @app.route('/user/create', methods=['POST'])
 def create():
     print(request.form)
+    User.save(request.form)
     return redirect('/users')
 
 
