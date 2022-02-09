@@ -22,6 +22,9 @@ def new():
 
 @app.route('/user/create', methods=['POST'])
 def create():
+    print(request.form)
+    return redirect('/users')
 
-    if __name__ == "__main__":
-        app.run(debug=True)
+
+if __name__ == "__main__":
+    app.run(debug=True)
