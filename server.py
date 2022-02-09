@@ -15,7 +15,7 @@ def users():
     return render_template("users.html", users=User.get_all())
 
 
-@app.route('/user/new')
+@app.route('/users/new')
 def new():
     return render_template("new_user.html")
 
