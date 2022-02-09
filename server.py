@@ -15,5 +15,13 @@ def users():
     return render_template("users.html", users=User.get_all())
 
 
-if __name__ == "__main__":
-    app.run(debug=True)
+@app.route('/user/new')
+def new():
+    return render_template("new_user.html")
+
+
+@app.route('/user/create', methods=['POST'])
+def create():
+
+    if __name__ == "__main__":
+        app.run(debug=True)
