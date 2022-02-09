@@ -12,7 +12,7 @@ def index():
 
 @app.route('/users')
 def users():
-    return render_template("users.html", users=User.getall())
+    return render_template("users.html", users=User.get_all())
 
 
 if __name__ == "__main__":

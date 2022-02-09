@@ -15,9 +15,7 @@ class User:
     @classmethod
     def get_all(cls):
         query = "SELECT * FROM users;"
-
         results = connectToMySQL('users_schema').query_db(query)
-
         users = []
         # Iterate over the db results and create instances of friends with cls.
         for u in results:
@@ -26,6 +24,7 @@ class User:
 
     @classmethod
     def save(cls, data):
-        query = "INSERT INTO users ( first_name , last_name , email , created_at, updated_at ) VALUES ( %(fname)s , %(lname)s , %(occ)s , NOW() , NOW() );"
+        query = "INSERT INTO users ( first_name , last_name , email , created_at, updated_at ) VALUES ( %(first_name)s , %(last_name)s , %(email)s , NOW());"
         # data is a dictionary that will be passed into the save method from server.py
         return connectToMySQL('users_schema').query_db(query, data)
+        return result
